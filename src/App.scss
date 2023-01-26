@@ -55,6 +55,12 @@ body {
   cursor: pointer;
   font-weight: 600;
   margin-right: 10px;
+
+  svg {
+    color: darkcyan;
+    font-size: 20px;
+    margin-top: 2px;
+  }
 }
 
 .input-text,
@@ -62,14 +68,6 @@ body {
   height: 45px;
   outline: none;
   border: none;
-}
-
-.input-submit {
-  svg {
-    color: darkcyan;
-    font-size: 20px;
-    margin-top: 2px;
-  }
 }
 
 .active-link {
@@ -106,8 +104,15 @@ body {
   overflow: hidden;
   max-width: 290px;
   z-index: 9;
+
   &.showMenu {
     width: 100%;
+  }
+
+  li {
+    &:first-child {
+      margin-top: 7rem;
+    }
   }
 }
 
@@ -118,14 +123,6 @@ a {
   color: #3fffd2;
   text-transform: uppercase;
   font-weight: bold;
-}
-
-.menuNav {
-  li {
-    &:first-child {
-      margin-top: 7rem;
-    }
-  }
 }
 
 /* about page */
@@ -139,11 +136,13 @@ a {
   list-style: none;
   flex: 2;
   margin-right: 15px;
+
   a {
     color: #9f9f9f;
     text-transform: capitalize;
     padding: 20px 0;
     font-weight: 600;
+
     &:hover {
       color: #000;
     }
@@ -152,11 +151,13 @@ a {
 
 .main__content {
   flex: 7;
+
   h1 {
     margin-bottom: 15px;
     line-height: 30px;
     font-size: 30px;
   }
+
   p {
     line-height: 25px;
   }
