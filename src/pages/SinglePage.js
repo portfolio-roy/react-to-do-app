@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-// eslint-disable-next-line
+
 const SinglePage = () => {
   const aboutData = [
     {
@@ -13,7 +13,7 @@ const SinglePage = () => {
       slug: 'about-author',
       title: 'About the Author',
       description:
-        'This app was developed by Prantosh Biswas, a self-taught web developer and a technical writer. He is opened to freelance Gig. So go ahead and connect with ibas on Twitter @prantalks.',
+        'The app is developed by Utsargo Roy, a micronaut at microverse. Email: royutsargo@gmail.com, Linkedin: @utsargo-roy, Twitter: @royutsargo',
     },
   ];
   const { slug } = useParams();

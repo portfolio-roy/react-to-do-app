@@ -1,55 +1,51 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { FaPlusCircle } from 'react-icons/fa';
 
-class InputTodo extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      title: '',
-    };
-  }
+const InputTodo = (props) => {
+  const [inputText, setInputText] = useState({
+    title: '',
+  });
 
-  onChange = (e) => {
-    const { name, value } = e.target;
-    this.setState({
-      [name]: value,
+  const onChange = (e) => {
+    setInputText({
+      ...inputText,
+      [e.target.name]: e.target.value,
     });
   };
+  const err = document.querySelector('.error');
+  const handleSubmit = (e) => {
+    const { addTodoProps } = props;
+    e.preventDefault();
+    if (inputText.title.trim()) {
+      addTodoProps(inputText.title);
+      setInputText({
+        title: '',
+      });
+      err.style.visibility = 'hidden';
+    } else {
+      err.style.visibility = 'visible';
+    }
+  };
 
-    handleSubmit = (e) => {
-      e.preventDefault();
-      // eslint-disable-next-line
-      if (this.state.title.trim()) {
-      // eslint-disable-next-line
-      this.props.addTodoProps(this.state.title);
-        this.setState({
-          title: '',
-        });
-      } else {
-      // eslint-disable-next-line
-      alert('Please write item');
-      }
-    };
-
-    render() {
-      return (
-      // eslint-disable-next-line
-      <form onSubmit={this.handleSubmit} className="form-container">
+  return (
+    <div className="to-do-input">
+      <form onSubmit={handleSubmit} className="form-container">
         <input
           type="text"
           className="input-text"
-          placeholder="Add Todo..."
+          placeholder="Add todo..."
+          value={inputText.title}
           name="title"
-          onChange={this.onChange}
-          // eslint-disable-next-line
-          value={this.state.title}
+          onChange={onChange}
         />
-        <button type="submit" className="input-submit">
-          <FaPlusCircle style={{ color: 'darkcyan', fontSize: '20px', marginTop: '2px' }} />
-        </button>
+        <button type="button" className="input-submit" label="submit"><FaPlusCircle /></button>
       </form>
-      );
-    }
-}
-
+      <p className="error">Please write an item</p>
+    </div>
+  );
+};
+InputTodo.propTypes = {
+  addTodoProps: PropTypes.func.isRequired,
+};
 export default InputTodo;
