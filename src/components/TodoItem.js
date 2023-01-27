@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaTrash } from 'react-icons/fa';
 import PropTypes from 'prop-types';
-import styles from './TodoItem.module.css';
+import styles from './TodoItem.module.scss';
 // eslint-disable-next-line
 const TodoItem = (props) => {
   const [isEditing, setEditing] = useState(false);
