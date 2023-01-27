@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaTrash } from 'react-icons/fa';
 import PropTypes from 'prop-types';
-import styles from './TodoItem.module.css';
+import styles from './TodoItem.module.scss';
 // eslint-disable-next-line
 const TodoItem = (props) => {
   const [isEditing, setEditing] = useState(false);
@@ -69,13 +69,12 @@ const TodoItem = (props) => {
 
 TodoItem.propTypes = {
   todo: PropTypes.shape({
-    completed: PropTypes.bool.isRequired,
-    id: PropTypes.number.isRequired,
-    title: PropTypes.string.isRequired,
+    id: PropTypes.string,
+    title: PropTypes.string,
+    completed: PropTypes.bool,
   }).isRequired,
   handleChange: PropTypes.func.isRequired,
   delTodo: PropTypes.func.isRequired,
   setUpdate: PropTypes.func.isRequired,
 };
-
 export default TodoItem;

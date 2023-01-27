@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { MdClose } from 'react-icons/md';
 import { FiMenu } from 'react-icons/fi';
-// eslint-disable-next-line
+
 const links = [
   {
     id: 1,
@@ -41,9 +41,8 @@ const Navbar = () => {
           <li key={link.id}>
             <NavLink
               to={link.path}
-              activeClassName="active-link"
               onClick={() => closeMenu()}
-              exact
+              exact="true"
             >
               {link.text}
             </NavLink>
