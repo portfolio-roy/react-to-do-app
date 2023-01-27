@@ -76,13 +76,10 @@
 
 #### 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Make simple calculations.**
-- [ ] **Read a random math-related quote.**
+- N/A
 <!-- LIVE DEMO -->
 
 ## 🚀 Live Demo <a name="live-demo"></a>
-
-> Coming soon...
 
 - <a href="http://react-todo.utsargo.tech/" target="_blank">Live Demo Link</a>
 
